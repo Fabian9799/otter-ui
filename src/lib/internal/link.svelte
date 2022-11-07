@@ -1,7 +1,7 @@
 <script type="ts">
 	export let title = '';
 	export let url = '';
-	let full_url = new URL(url);
+	export let icon = '';
 </script>
 
 <a href={url} target="_blank" rel="noreferrer">
@@ -10,7 +10,7 @@
 	>
 		<div class="flex gap-3">
 			<div class="w-14 h-14 flex-none">
-				<img src="https://icon.horse/icon/{full_url.hostname}" alt="" />
+				<img src={icon} alt="" />
 			</div>
 			<div class="flex flex-col grow min-w-0">
 				<p class="text-2xl grow text-gray-300">{title}</p>
