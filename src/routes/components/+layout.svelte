@@ -27,7 +27,7 @@
 			>
 		{/each}
 	</div>
-	<div class="p-8">
+	<div class="p-8 grow">
 		<slot />
 	</div>
 </div>
