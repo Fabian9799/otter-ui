@@ -11,16 +11,13 @@
 	import Checkbox from '$lib/component/checkbox.svelte';
 	import Toggle from '$lib/component/toggle.svelte';
 	import Radio from '$lib/component/radio.svelte';
+	import Footer from '$lib/internal/footer.svelte';
+	import LogoText from '$lib/internal/logo-text.svelte';
 </script>
 
-<div class="p-2">
-	<div class="flex justify-center items-center mt-20">
-		<div class="flex flex-col sm:flex-row gap-2">
-			<img class="h-24 my-auto" src="otter.svg" alt="" />
-			<h1 class="text-center my-auto text-7xl font-bold">
-				Otter <span class="text-orange-400">UI</span>
-			</h1>
-		</div>
+<div class="p-3">
+	<div class="flex justify-center items-center pt-20">
+		<LogoText />
 	</div>
 	<div class="flex justify-center items-center mt-8">
 		<div class="gap-4 flex">
@@ -32,7 +29,7 @@
 		<div class="max-w-4xl border-2 rounded-xl border-gray-800 p-8 w-full flex flex-col gap-2">
 			<div>
 				<p class="text-lg">Buttons</p>
-				<div class="flex gap-2 mt-2">
+				<div class="flex gap-2 mt-2 flex-wrap">
 					<Button />
 					<ButtonLoading />
 					<ButtonIcon />
@@ -84,7 +81,5 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex justify-center items-center mt-8 mb-2">
-		<p class="text-gray-600">OtterUI - <a href="https://fabian9799.de">@fabian9799</a></p>
-	</div>
+	<Footer />
 </div>
