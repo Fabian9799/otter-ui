@@ -8,6 +8,7 @@
 	};
 	export let data: Component2 = { components: [] };
 	import { page } from '$app/stores';
+	import Svg from '$lib/internal/svg.svelte';
 </script>
 
 <div class="flex gap-4">
@@ -20,11 +21,14 @@
 		</div>
 		{#each data.components as component}
 			<a
-				class="p-2  {$page.params.name == component.name
+				class="p-2 flex gap-2  {$page.params.name == component.name
 					? 'bg-gray-700 hover:bg-gray-600'
 					: 'bg-gray-800 hover:bg-gray-700'} duration-200 rounded-md"
-				href="/components/{component.name}">{component.name}</a
+				href="/components/{component.name}"
 			>
+				<Svg name="icon-{component.name}" class="w-6 h-6" />
+				<p>{component.name}</p>
+			</a>
 		{/each}
 	</div>
 	<div class="p-8 grow">
