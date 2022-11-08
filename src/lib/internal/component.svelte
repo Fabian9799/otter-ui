@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Button from '$lib/internal/button.svelte';
 	export let name = '';
 	import CopyButton from '$lib/internal/copy-button.svelte';
 	let copied = false;
@@ -12,7 +13,11 @@
 
 <div class="border rounded-md p-4 border-gray-800">
 	<div class="w-full flex gap-2 flex-col">
-		{#await import(`../../lib/component/${name}.svelte?raw`).then((x) => x.default) then src}
+		{#await import(`../../lib/component/${name}.svelte?raw`).then((x) => x.default)}
+			<div>
+				<Button>Loading...</Button>
+			</div>
+		{:then src}
 			<div>
 				<button
 					on:click={() => {
